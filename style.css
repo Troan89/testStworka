@@ -1,0 +1,116 @@
+:root {
+    --total-steps: 7;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.checklist {
+    display: flex;
+    background-color: rgba(53, 121, 245, 1);
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    width: 743px;
+    height: 91px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(53, 121, 245, 1);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+    position: relative;
+
+}
+
+.progress-circle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    --progress: calc(var(--completed-steps) / var(--total-steps) * 100%);
+    background: conic-gradient(
+            rgba(255, 255, 255, 1) var(--progress),
+            rgba(255, 255, 255, 0.5) 0%
+    );
+}
+
+.progress-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 56px;
+    height: 56px;
+    background: rgba(53, 121, 245, 1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.progress-text {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.content {
+    flex: 1;
+}
+
+.title {
+    font-size: 12px;
+    background-color: rgba(35, 100, 219, 1);
+    width: 76px;
+    height: 18px;
+    padding: 0 13px;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 40px;
+    margin-bottom: 5px;
+    align-content: center;
+}
+
+.status {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.next-action {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.open-checklist {
+    background-color: rgba(244, 248, 255, 1);
+    border: none;
+    border-radius: 6px;
+    color: rgba(71, 119, 237, 1);
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
